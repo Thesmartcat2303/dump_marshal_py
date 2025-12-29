@@ -1,20 +1,4 @@
 #!/usr/bin/python3
-
-if "/".join(__import__('sys').argv[0].split("\\")).split("/")[-1] != "dump_marshal.py":
-    __import__('sys').exit(1)
-try:
-    if "/".join(__file__.split("\\")).split("/")[-1] != "dump_marshal.py":
-        __import__('sys').exit(1)
-except:
-    pass
-
-
-print(">>> Marshal dump by KhanhNguyen9872")
-print(">>> FB: https://fb.me/khanh10a1")
-print("!! ĐÂY LÀ TOOL SHARE FREE TẠI GITHUB KHANHNGUYEN9872 !!")
-print("!! NẾU BẠN MUA TOOL NÀY TỪ MỘT AI ĐÓ, HỌ LÀ LỪA ĐẢO !!")
-print()
-
 __pypath__ = __import__('os').getcwd()
 
 def rm_dir(dir):
@@ -23,10 +7,8 @@ def rm_dir(dir):
     except:
         pass
 rm_dir('__pycache__')
-
 pyver = ".".join(__import__('sys').version.split(" ")[0].split(".")[:-1])
 print(">> Python: {}".format(pyver))
-
 while 1:
     try:
         file = input(">> Input file have marshal: ").replace("\"","")
@@ -105,7 +87,7 @@ else:pass
 finally:pass
 def loads(bytes):
     global {4}
-    open('{{}}_dump/dump_{{}}_{{}}.txt'.format('{0}',{4},'{0}'),'w').write("# marshal dump by KhanhNguyen9872\n# file name: [{0}.py] ({1} - {2})\n# dump count -> " + str({4}) + "\n\nexec(__import__('marshal').loads(" + str(bytes) + "))\n")
+    open('{{}}_dump/dump_{{}}_{{}}.py'.format('{0}',{4},'{0}'),'w').write("# marshal dump by Thesmartcat2303\n# file name: [{0}.py] ({1} - {2})\n# dump count -> " + str({4}) + "\n\nexec(__import__('marshal').loads(" + str(bytes) + "))\n")
     print('dump count -> {{}} completed (marshal)!'.format({4}))
     {4} += 1
     return marshal.loads(bytes)
@@ -115,7 +97,7 @@ def compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1):
         source=source.decode('utf8')
     except:
         pass
-    open('{{}}_dump/dump_{{}}_{{}}_code.txt'.format('{0}',{4},'{0}'),'w').write("""# marshal dump by KhanhNguyen9872\n# file name: [{0}.py] ({1} - {2})\n# dump count -> """ + str({4}) + """\n# this is a code string!\n\n""" + str(source) + """\n""")
+    open('{{}}_dump/dump_{{}}_{{}}_code.py'.format('{0}',{4},'{0}'),'w').write("""# marshal dump by Thesmartcat2303\n# file name: [{0}.py] ({1} - {2})\n# dump count -> """ + str({4}) + """\n# this is a code string!\n\n""" + str(source) + """\n""")
     print('dump count -> {{}} completed (code)!'.format({4}))
     {4} += 1
     return {5}(source, filename, mode, flags, dont_inherit, optimize)
