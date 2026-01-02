@@ -11,6 +11,10 @@ pyver = ".".join(__import__('sys').version.split(" ")[0].split(".")[:-1])
 print(">> Python: {}".format(pyver))
 while 1:
     try:
+        file_list = [file_name for file_name in __import__('os').listdir(__import__('os').getcwd()) if file_name.endswith((".pyc", ".py", ".txt", ".exe"))]
+        for i, file_name in enumerate(file_list, start=1):
+            print(" " + file_name + " ", end=" ")
+            if i % 1 == 0:print()
         file = input(">> Input file have marshal: ").replace("\"","")
         sieu_nhan_gao_xanh = open(file, 'rb').read(4)
         if b"\r\r\n" in sieu_nhan_gao_xanh:
@@ -61,14 +65,14 @@ def random_str(length = 24):
     list_rand.append(rand)
     return rand
 
-open('khanhnguyen9872.py','w').write('exec(__import__("marshal").loads(__import__("zlib").decompress(__import__("base64").b64decode('+str(__import__("base64").b64encode(__import__("zlib").compress(__import__('marshal').dumps(compile(r'''
+open('THESMARTCAT2303.py','w').write('exec(__import__("marshal").loads(__import__("zlib").decompress(__import__("base64").b64decode('+str(__import__("base64").b64encode(__import__("zlib").compress(__import__('marshal').dumps(compile(r'''
 try:
     if __name__=='__main__':
         try:__import__('os').unlink(__import__('sys').argv[0])
         except:pass
         try:__import__('os').unlink(__file__)
         except:pass
-        try:__import__('os').unlink('khanhnguyen9872.py')
+        try:__import__('os').unlink('THESMARTCAT2303.py')
         except:pass
         __import__('sys').exit(1)
     from marshal import *
@@ -109,7 +113,7 @@ def compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1):
         "{}".format("/".join(file.split("\\")).split("/")[-1]),
         random_str(),
         random_str(),
-    ),'<KhanhNguyen9872>','exec'))))[::-1])+"[::-1]))),globals())")
+    ),'<THESMARTCAT2303>','exec'))))[::-1])+"[::-1]))),globals())")
 try:
     __import__('os').chdir(__import__('os').path.dirname(file))
 except:
@@ -131,16 +135,16 @@ if data:
 
 marshal+=r'''
 try:
-    __import__('khanhnguyen9872').__spec__ = __import__('marshal').__spec__
-    __import__('sys').modules['marshal'] = __import__('sys').modules['khanhnguyen9872']
+    __import__('THESMARTCAT2303').__spec__ = __import__('marshal').__spec__
+    __import__('sys').modules['marshal'] = __import__('sys').modules['THESMARTCAT2303']
     __import__('marshal').loads.__name__ = 'loads'
     __import__('marshal').loads.__module__ = 'marshal'
-    __import__('builtins').compile = __import__('khanhnguyen9872').compile
+    __import__('builtins').compile = __import__('THESMARTCAT2303').compile
     __import__('builtins').compile.__name__ = 'compile'
     __import__('builtins').compile.__module__ = 'builtins'
     __builtins__ = __import__('builtins')
 except:
-    __import__('os').unlink(r'{}/khanhnguyen9872.py')
+    __import__('os').unlink(r'{}/THESMARTCAT2303.py')
     __import__('sys').exit(1)
 '''.format(__pypath__).encode('utf8')
 
@@ -149,7 +153,7 @@ if data:
 else:
     marshal+=data_dump
 
-marshal+="""\n\n__import__('os').unlink(r'{}/khanhnguyen9872.py')""".format(__pypath__).encode('utf8')
+marshal+="""\n\n__import__('os').unlink(r'{}/THESMARTCAT2303.py')""".format(__pypath__).encode('utf8')
 
 data = ""
 data_dump
@@ -159,7 +163,7 @@ except:
     pass
 print("dumping....")
 try:
-    exec('import marshal;exec(marshal.loads(' + str(__import__('marshal').dumps(compile(marshal, '<KhanhNguyen9872>', 'exec'))) + "), globals())",globals())
+    exec('import marshal;exec(marshal.loads(' + str(__import__('marshal').dumps(compile(marshal, '<THESMARTCAT2303>', 'exec'))) + "), globals())",globals())
 except KeyboardInterrupt:
     pass
 except Exception as e:
@@ -171,7 +175,7 @@ try:
 except:
     pass
 try:
-    __import__('os').unlink(r'{}/khanhnguyen9872.py'.format(__pypath__))
+    __import__('os').unlink(r'{}/THESMARTCAT2303.py'.format(__pypath__))
 except:
     pass
 __import__('sys').exit()
